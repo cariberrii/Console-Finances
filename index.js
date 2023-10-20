@@ -91,16 +91,26 @@ var finances = [
 
 
 // Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+console.log("Financial Analysis");
+console.log("-------------------------------------");
 
 // The total number of months included in the dataset.
+console.log("Total Months: " + finances.length);
 
 // The net total amount of Profit/Losses over the entire period.
+var netTotal = 0;
 
-// The average of the changes in Profit/Losses over the entire period.
+for (var i = 0; i < finances.length; i++) {
+  netTotal += finances[i][1];
+}
 
-// You will need to track what the total change in profits is from month to month and then find the average.
+console.log("Total: $" + netTotal);
 
-// (Total/(Number of months - 1))
+// Calculate the change in profits from month to month
+
+// Then the Total of the change in profits from month to month
+
+// Find the average of the changes over the entire period (Total/(Number of months - 1))
 
 // The greatest increase in profits (date and amount) over the entire period.
 
