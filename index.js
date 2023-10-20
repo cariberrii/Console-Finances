@@ -107,7 +107,12 @@ for (var i = 0; i < finances.length; i++) {
 console.log("Total: $" + netTotal);
 
 // Calculate the change in profits from month to month
-
+for (var i = 1; i < finances.length; i++) {
+  var nextMonth = finances[i][1];
+  var lastMonth = finances[i - 1][1];
+  var difference = nextMonth - lastMonth;
+  console.log("difference: " + difference);
+}
 // Then the Total of the change in profits from month to month
 
 // Find the average of the changes over the entire period (Total/(Number of months - 1))
