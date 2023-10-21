@@ -109,16 +109,21 @@ console.log("Total: $" + netTotal);
 // Calculate the change in profits from month to month
 var totalChange = 0;
 var greatestIncrease = 0;
+var greatestDecrease = 0;
 
 for (var i = 1; i < finances.length; i++) {
   var nextMonth = finances[i][1];
   var lastMonth = finances[i - 1][1];
   var difference = nextMonth - lastMonth;
   totalChange += difference;
-  console.log("difference: " + difference);
+  // console.log("difference: " + difference);
 
     if (difference > greatestIncrease) {
       greatestIncrease = difference;
+    }
+
+    if (difference < greatestDecrease) {
+      greatestDecrease = difference;
     }
 
   difference++;
@@ -141,6 +146,6 @@ console.log("Average Change: " + Math.round(avg * 100) / 100);
 //     greatestIncrease = finances[i][1];
 //   }
 // }
-console.log("Greatest Increase in Profits/Losses: " + greatestIncrease)
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease);
 // The greatest decrease in losses (date and amount) over the entire period.
-
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease);
