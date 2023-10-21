@@ -107,15 +107,25 @@ for (var i = 0; i < finances.length; i++) {
 console.log("Total: $" + netTotal);
 
 // Calculate the change in profits from month to month
+var totalChange = 0;
+
 for (var i = 1; i < finances.length; i++) {
   var nextMonth = finances[i][1];
   var lastMonth = finances[i - 1][1];
   var difference = nextMonth - lastMonth;
-  console.log("difference: " + difference);
-}
-// Then the Total of the change in profits from month to month
+  totalChange += difference;
+  // console.log("difference: " + difference);
+  difference++;
 
+  // Then the Total of the change in profits from month to month
+  // console.log("Total Change: " + totalChange);
+}
 // Find the average of the changes over the entire period (Total/(Number of months - 1))
+var avg = totalChange / (finances.length - 1);
+
+// Round it to the nearest hundreds place...
+
+console.log("Average Change: " + Math.round(avg * 100) / 100);
 
 // The greatest increase in profits (date and amount) over the entire period.
 
