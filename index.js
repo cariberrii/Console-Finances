@@ -108,13 +108,19 @@ console.log("Total: $" + netTotal);
 
 // Calculate the change in profits from month to month
 var totalChange = 0;
+var greatestIncrease = 0;
 
 for (var i = 1; i < finances.length; i++) {
   var nextMonth = finances[i][1];
   var lastMonth = finances[i - 1][1];
   var difference = nextMonth - lastMonth;
   totalChange += difference;
-  // console.log("difference: " + difference);
+  console.log("difference: " + difference);
+
+    if (difference > greatestIncrease) {
+      greatestIncrease = difference;
+    }
+
   difference++;
 
   // Then the Total of the change in profits from month to month
@@ -128,6 +134,13 @@ var avg = totalChange / (finances.length - 1);
 console.log("Average Change: " + Math.round(avg * 100) / 100);
 
 // The greatest increase in profits (date and amount) over the entire period.
-
+// var greatestIncrease = 0;
+// Finds the largest number in dataset but must be part of loop to find greatest difference!
+// for (var i = 0; i <finances.length; i++) { 
+//   if (finances[i][1] > greatestIncrease) {
+//     greatestIncrease = finances[i][1];
+//   }
+// }
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease)
 // The greatest decrease in losses (date and amount) over the entire period.
 
