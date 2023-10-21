@@ -90,7 +90,7 @@ var finances = [
 ];
 
 
-// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+// JavaScript code that analyzes the records to calculate each of the following:
 console.log("Financial Analysis");
 console.log("-------------------------------------");
 
@@ -132,6 +132,10 @@ for (var i = 1; i < finances.length; i++) {
       greatestIncreaseMonth = finances[i][0];
     }
 
+    if(greatestDecrease === difference) {
+      greatestDecreaseMonth = finances[i][0];
+    }
+
   difference++;
 
   // Then the Total of the change in profits from month to month
@@ -152,6 +156,6 @@ console.log("Average Change: " + Math.round(avg * 100) / 100);
 //     greatestIncrease = finances[i][1];
 //   }
 // }
-console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " " + greatestIncrease);
+console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseMonth + " ($" + greatestIncrease + ")");
 // The greatest decrease in losses (date and amount) over the entire period.
-console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease);
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseMonth + " ($" + greatestDecrease + ")");
